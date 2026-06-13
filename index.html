@@ -11,14 +11,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0b0f1a;
-      --surface:   #111827;
-      --surface-2: #1a2235;
-      --border:    rgba(255,255,255,0.08);
-      --text:      #f0f4ff;
-      --muted:     rgba(255,255,255,0.5);
+      --bg:        #1e1e1e;
+      --surface:   #2a2a2a;
+      --surface-2: #333333;
+      --border:    rgba(255,255,255,0.12);
+      --text:      #e8e8e8;
+      --muted:     #888888;
       --accent:    #3b72f5;
-      --accent-dim:#1e3a8a;
     }
 
     body {
@@ -30,23 +29,31 @@
     /* ── HEADER ── */
     header {
       background: var(--bg);
-      border-bottom: none;
       color: var(--text);
-      padding: 3rem 2rem 2.5rem;
+      padding: 3rem 2rem 2rem;
       text-align: center;
     }
     header h1 {
       font-size: clamp(1.6rem, 4vw, 2.4rem);
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.8rem;
     }
-    header p {
-      max-width: 680px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--muted);
+
+    /* ── STEPS BOX ── */
+    .steps-box {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem 1.8rem;
+      text-align: left;
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+    .steps-box ol {
+      padding-left: 1.2rem;
     }
 
     /* ── SECTIONS ── */
@@ -58,7 +65,7 @@
     .section-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 12px;
       overflow: hidden;
     }
     .section-header {
@@ -79,12 +86,12 @@
     /* ── AGCOM NOTE ── */
     .agcom-note {
       padding: 0.75rem 1.5rem;
-      background: rgba(59,114,245,0.08);
-      border-bottom: 1px solid rgba(59,114,245,0.2);
+      background: #000;
+      border-bottom: 1px solid var(--border);
       font-size: 0.84rem;
-      color: rgba(255,255,255,0.5);
+      color: var(--text);
     }
-    .agcom-note a { color: rgba(255,255,255,0.5); }
+    .agcom-note a { color: var(--text); }
 
     iframe.agcom {
       width: 100%;
@@ -107,30 +114,28 @@
       font-size: 0.82rem;
       border-top: 1px solid var(--border);
       margin-top: 2rem;
+      line-height: 1.9;
     }
+    footer a { color: inherit; }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════
-     HEADER
-══════════════════════════════════════════════ -->
 <header>
-<h1>Benvenuto e grazie per il tuo contributo!</h1>
-  <p>
-    Ti chiediamo di accedere alla BroadBand Map di AGCOM, inserire il tuo indirizzo,
-    verificare il tipo di connessione disponibile al tuo domicilio e compilare il form.
-  </p>
+  <h1>Benvenuto e grazie per il tuo contributo!</h1>
+  <div class="steps-box">
+    <ol>
+      <li>Inserisci il tuo indirizzo nella mappa AGCOM</li>
+      <li>Verifica la connessione disponibile al tuo domicilio</li>
+      <li>Compila il form</li>
+    </ol>
+  </div>
 </header>
 
-
-<!-- ══════════════════════════════════════════════
-     SEZIONE 1 — MAPPA AGCOM
-══════════════════════════════════════════════ -->
 <div class="section">
   <div class="section-card">
     <div class="section-header">
-      <h2>BroadBand Map — AGCOM</h2>
+      <h2>AGCOM Map</h2>
     </div>
     <div class="section-body">
       <div class="agcom-note">
@@ -149,13 +154,10 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════
-     SEZIONE 2 — FORM FILLOUT
-══════════════════════════════════════════════ -->
 <div class="section">
   <div class="section-card">
     <div class="section-header">
-      <h2>Compila il Form</h2>
+      <h2>Form</h2>
     </div>
     <div class="section-body">
       <div class="fillout-wrapper">
@@ -173,16 +175,9 @@
   </div>
 </div>
 
-
-<!-- FOOTER -->
 <footer>
-  Per ulteriori informazioni puoi contattarci al numero <a href="tel:+393203112115" style="color:inherit;">3203112115</a> o all'indirizzo mail <a href="mailto:noiperfossano@gmail.com" style="color:inherit;">noiperfossano@gmail.com</a>
+  Per ulteriori informazioni: Lorenzo <a href="tel:+393203112115">3203112115</a> · <a href="mailto:noiperfossano@gmail.com">noiperfossano@gmail.com</a>
 </footer>
-
-<!-- ══════════════════════════════════════════════
-     SCRIPTS
-══════════════════════════════════════════════ -->
-
 
 </body>
 </html>
